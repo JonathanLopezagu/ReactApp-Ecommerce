@@ -10,4 +10,13 @@
     width: 10vw;
     height: 15vh;
     margin: auto 0;
+    
+}
+.imgLogo:hover{
+    transform: scale(1.1);    
+}
+.nav-item a:hover{
+    padding: 10px;
+    text-decoration: underline 3px red;
+    
 }

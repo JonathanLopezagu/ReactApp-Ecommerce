@@ -23,6 +23,9 @@ const NavBar = () => {
                             <a className="nav-link" href=".">Videojuegos</a>
                         </li>
                         <li className="nav-item">
+                            <a className="nav-link" href=".">Controles</a>
+                        </li>
+                        <li className="nav-item">
                             <a className="nav-link" href=".">Accesorios</a>
                         </li>
                     </ul>
