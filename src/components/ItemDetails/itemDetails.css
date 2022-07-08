@@ -1,0 +1,37 @@
+.itemDetails{ 
+    margin: auto;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 80vw;
+    height: 60vh;
+}
+
+.details-img{
+    width: 60%;
+    height: 60vh;
+    display: flex;
+    margin: 0 auto;
+}
+
+.img-detalles{
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    
+}
+
+.info-details{
+    width: 40%;
+    margin: auto;
+}
+
+.btn-add{
+    padding: 5px;
+    color:white ;
+    background-color: black;
+    border-radius: 10px;
+}
