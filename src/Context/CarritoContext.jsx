@@ -13,7 +13,8 @@ export const CarritoContext = ({ children }) => {
        let itemID = item.id;
        if(existeEnCarrito(itemID)){
         let items= cart.find((i)=> i.item.id === itemID)
-        items.quantity += item.quantity;
+        
+        console.log(items)
         alert("producto ya esta en el carrito");
        }
        else{ 
