@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './itemDetails.css'
 import { useContext } from 'react'
 import { CartContext } from '../../Context/CarritoContext'
+import { Link } from 'react-router-dom'
 
 const ItemDetails = ({ item }) => {
 
-  const [cart,agregarCarrito,quitarCarrito,existeEnCarrito,vaciarCarrito] = useContext(CartContext);
+  const [cart, agregarCarrito] = useContext(CartContext);
+  const [cantidad,setCantidad] = useState();
+  console.log(cart);
 
-  const funcionContador = (contador)=>{
-    console.log("el valor del contador" , contador)
+  
+  const funcionContador = (count)=>{
+    console.log("el valor del contador" , count)
+    setCantidad(count)
+    const producto = { item: item, quantity:cantidad};
+    agregarCarrito(producto);
+
   }
 
   return (
@@ -31,7 +39,7 @@ const ItemDetails = ({ item }) => {
         <p>
           precio :  ${item.precio}mxn
         </p>
-        <ItemCount stock= {item.cantidad} inicial={0} onAdd={funcionContador}></ItemCount>
+        {cantidad? <Link to='/cart'> <button>Terminar Comprar </button>  </Link> : <ItemCount stock= {item.cantidad} inicial={0} onAdd={funcionContador}></ItemCount>}
       </div>
     </div>
   )

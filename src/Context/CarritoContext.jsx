@@ -9,13 +9,17 @@ export const CarritoContext = ({children}) => {
     const [cart, setCart] = useState([]);
  
     const agregarCarrito =(item)=>{
+        cart.push(item);
     }
 
     const quitarCarrito = (id)=>{ 
+        setCart(cart.filter((item) => item.id !== id));
     }
     const vaciarCarrito = ()=>{
+        setCart([]);
     }
-    const existeEnCarrito =()=>{ 
+    const existeEnCarrito =(id)=>{ 
+        return cart.find((item) => item.id === id) ? true : false;
     }
 
 

@@ -28,7 +28,7 @@ const ItemDetailsContainer = () => {
   }, [id]);
 
 
-  console.log(id);
+  //console.log(id);
 
   return loading ? (
 
