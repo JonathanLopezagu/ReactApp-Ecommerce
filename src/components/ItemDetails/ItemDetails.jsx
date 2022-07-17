@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 const ItemDetails = ({ item }) => {
 
-  const [cart, agregarCarrito] = useContext(CartContext);
+  const [cart, agregarCarrito,existeEnCarrito,quitarCarrito,vaciarCarrito] = useContext(CartContext);
   const [cantidad,setCantidad] = useState();
   console.log(cart);
 
@@ -15,9 +15,9 @@ const ItemDetails = ({ item }) => {
   const funcionContador = (cantidad)=>{
     console.log("el valor del contador" , cantidad)
     setCantidad(cantidad)
-    const producto = { item: item, quantity:cantidad};
+    const producto = { item: item, quantity:cantidad , costo: item.precio , id: item.id};
     agregarCarrito(producto);
-
+    
   }
 
   return (
