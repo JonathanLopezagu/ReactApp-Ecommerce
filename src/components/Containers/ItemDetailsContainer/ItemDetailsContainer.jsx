@@ -12,6 +12,7 @@ const ItemDetailsContainer = () => {
 
   useEffect(() => {
     setTimeout(() => {
+
       gFetch
       .then((resp) => setProductos(
         resp.find((prod) => prod.id === Number(id)))

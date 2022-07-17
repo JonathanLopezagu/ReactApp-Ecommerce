@@ -1,8 +1,16 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount'
 import './itemDetails.css'
+import { useContext } from 'react'
+import { CartContext } from '../../Context/CarritoContext'
 
 const ItemDetails = ({ item }) => {
 
+  const [cart,agregarCarrito,quitarCarrito,existeEnCarrito,vaciarCarrito] = useContext(CartContext);
+
+  const funcionContador = (contador)=>{
+    console.log("el valor del contador" , contador)
+  }
 
   return (
     <div className='itemDetails'>
@@ -23,7 +31,7 @@ const ItemDetails = ({ item }) => {
         <p>
           precio :  ${item.precio}mxn
         </p>
-        <button className='btn-add'>Añadir al carrito </button>
+        <ItemCount stock= {item.cantidad} inicial={0} onAdd={funcionContador}></ItemCount>
       </div>
     </div>
   )

@@ -6,10 +6,12 @@ import Cart from './components/Containers/cart/Cart';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailsContainer from './components/Containers/ItemDetailsContainer/ItemDetailsContainer';
+import CarritoContext from './Context/CarritoContext';
 
 
 function App() {
   return (
+    <CarritoContext>
     <BrowserRouter>
     <div className="App">
       <NavBar />
@@ -22,6 +24,7 @@ function App() {
       </Routes>
     </div>
     </BrowserRouter>
+    </CarritoContext>
   );
 }
 
