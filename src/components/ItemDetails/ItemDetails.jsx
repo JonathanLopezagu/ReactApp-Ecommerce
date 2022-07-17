@@ -12,9 +12,9 @@ const ItemDetails = ({ item }) => {
   console.log(cart);
 
   
-  const funcionContador = (count)=>{
-    console.log("el valor del contador" , count)
-    setCantidad(count)
+  const funcionContador = (cantidad)=>{
+    console.log("el valor del contador" , cantidad)
+    setCantidad(cantidad)
     const producto = { item: item, quantity:cantidad};
     agregarCarrito(producto);
 
