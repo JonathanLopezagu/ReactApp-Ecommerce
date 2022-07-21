@@ -12,7 +12,7 @@ const productos = [{
     id: 1,
     categoria:'Consola',
     name: "PlayStation 5",
-    img: img1,
+    img:img1,
     cantidad: 10,
     precio: 15000,
   },

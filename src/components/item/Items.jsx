@@ -5,20 +5,20 @@ import './item.css';
 
 function Items({ productos }) {
 
-    const { id, categoria, img, precio, cantidad} = productos;
+    //const { id, categoria, imga, precio, cantidad} = productos;
 
     return (
       
         < div className = 'card' >
             
             <div className='img-card'>
-                <img className='img-producto' src={productos.img} alt="imagen-card"/>
+                <img className='img-producto' src={productos.imga} alt="imagen-card"/>
             </div>
             <div className='title-card'>
                 <h4>{productos.name}</h4>
             </div>
             <div className='precio-card'> 
-                <h4> ${productos.precio} mxn</h4>
+                <h4> $ {productos.precio}.00 mxn</h4>
             </div>
             <div className='disp-card'> 
                 <h6> Disponible: {productos.cantidad} piezas</h6>

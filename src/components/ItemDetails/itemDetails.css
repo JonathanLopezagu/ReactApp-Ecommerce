@@ -7,7 +7,8 @@
     border-radius: 10px;
     border: 1px solid black;
     width: 80vw;
-    height: 60vh;
+    height: auto;
+    margin-bottom: 10vh;
 }
 
 .details-img{
@@ -35,3 +36,7 @@
     background-color: black;
     border-radius: 10px;
 }
+
+.botones{
+    margin-bottom: 2vh;
+ }
