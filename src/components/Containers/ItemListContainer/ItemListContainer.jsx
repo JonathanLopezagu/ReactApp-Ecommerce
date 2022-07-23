@@ -33,35 +33,6 @@ function ItemListContainer() {
     }
    },[categoria] )
 
-   //console.log(productos)
-
-  /*
-  useEffect(() => {
-    if(categoria){
-    gFetch
-      .then((resp) => { setProductos(resp.filter((element) => element.categoria === categoria))}
-      )
-      .catch((error) => {
-        console.log(error)
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-    }
-    else {
-      gFetch
-        .then((resp) => {
-          setProductos(resp);
-        })
-        .catch((rej) => {
-          console.log(rej);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }
-  }, [categoria]);
-  */
   return loading ? (
 
     <Loading />

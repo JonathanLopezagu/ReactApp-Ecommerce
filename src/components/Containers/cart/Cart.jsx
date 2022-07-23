@@ -1,13 +1,25 @@
 import React from 'react'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../../Context/CarritoContext'
 import './Cart.css'
 
 const Cart = () => {
-  //pase carrito a mi card
-  const [cart, agregarCarrito, quitarCarrito, vaciarCarrito] = useContext(CartContext);
+ 
+  const [cart, eliminarProducto, agregarCarrito, vaciarCarrito,precioTotal ] = useContext(CartContext);
   console.log(cart)
-  //console.log(cart.length)
+  
+  if(!cart.length){
+    return (
+      <>
+        <br />
+        <h3 className="text-center mt-4">No hay productos en el carrito</h3>
+        <Link to='/'> <button> Seguir comprando </button></Link>
+        
+      </>
+    );
+  }
+
   return (
 
     <div className='DivCarrito'>
@@ -19,10 +31,14 @@ const Cart = () => {
         <span> Producto: {producto.name}</span>
         <span> Costo: ${producto.costo}.00 mxn c/u </span>
         <span> Precio total $ {producto.costo * producto.quantity}</span>
+        <button onClick={()=> eliminarProducto()}> Eliminar Producto</button>
         </div>
         
       ))}
-
+      
+      {/*mostrar total precio carrito y eliminar carrito listo*/}
+      <p> {precioTotal()} </p>
+      <button onClick={()=> vaciarCarrito()}> Vaciar Carrito</button>
     </div>
 
   )

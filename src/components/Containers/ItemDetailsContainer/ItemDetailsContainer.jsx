@@ -26,27 +26,6 @@ const ItemDetailsContainer = () => {
 
   }, [id]);
 
-  /*
- useEffect(() => {
-   setTimeout(() => {
-
-     gFetch
-     .then((resp) => setProductos(
-       resp.find((prod) => prod.id === Number(id)))
-     )
-     .catch((error) => {
-       console.log(error)
-     })
-     .finally(() => {
-       setLoading(false);
-     });
-     
-   },1000)
- }, [id]);
- */
-
-  //console.log(id);
-
   return loading ? (
 
     <Loading />

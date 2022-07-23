@@ -29,15 +29,15 @@ export const CarritoContext = ({ children }) => {
         return cart.reduce((acumulado,prodObjeto)=>  acumulado = acumulado + (prodObjeto.costo * prodObjeto.quantity), 0)
     }
 
-    const cantidadTotal = () => {
+    const cantidadTotal = () =>{
         return cart.reduce((contador,prodObject)=> contador += prodObject.quantity, 0)
     }
 
-    const eliminarProducto = (id) => {
-        setCart(cart.filter((item) => item.id === id));
+    const eliminarProducto = (id) =>{
+        setCart(cart.filter((prod) => prod.id !== id));
     }
 
-    const vaciarCarrito = () => {
+    const vaciarCarrito = () =>{
         setCart([]);
     }
     

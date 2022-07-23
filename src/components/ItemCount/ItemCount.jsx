@@ -8,14 +8,14 @@ const  ItemCount= ({stock, onAdd, inicial})  => {
     const restar = () =>{
       if(count > 0){
         setCount(count- 1)
-        //console.log(count)
+        
       }
     }
 
     const sumar = () =>{
       if(count < stock){
         setCount(count+1)
-        //console.log(count)
+       
       }
     }
     

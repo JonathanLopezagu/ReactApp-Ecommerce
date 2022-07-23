@@ -5,7 +5,10 @@ import './NavBar.css'
 import { Navbar, Nav } from "react-bootstrap"
 import { Link, NavLink } from 'react-router-dom';
 
+
 const NavBar = () => {
+
+
     return (
 
         <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
