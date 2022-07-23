@@ -15,7 +15,7 @@ export const CarritoContextProvider = ({ children }) => {
 
         const indexProducto = cart.findIndex(prod => prod.id === item.id)
 
-        if (indexProducto <= 0) {
+        if (indexProducto === -1) {
             setCart([
                 ...cart,
                 item
