@@ -1,0 +1,16 @@
+.DivCarrito{ 
+    margin-top: 5vh;
+}
+
+.productosCarrito{
+    width: auto;
+    height: 5vh;   
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+
+.imagenCart{
+    width: 20px;
+    height: 20px;
+}

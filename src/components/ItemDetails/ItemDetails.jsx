@@ -15,9 +15,10 @@ const ItemDetails = ({ item }) => {
   
   
   const funcionContador = (cantidad) => {
+    
     console.log("el valor del contador", cantidad)
     setCantidad(cantidad)
-    const producto = { item: item, quantity: cantidad, costo: item.precio, id: item.id , imga: item.imga};
+    const producto = { item: item, quantity: cantidad, costo: item.precio, id: item.id , imga: item.imga, name: item.name};
     agregarCarrito(producto);
 
   }
