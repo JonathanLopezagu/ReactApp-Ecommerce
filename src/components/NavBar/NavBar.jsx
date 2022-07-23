@@ -36,7 +36,7 @@ const NavBar = () => {
 
                     <Link to='/cart'>
                         <CardWidget />
-                        {countTot()}
+                        <span className='SpanContador'>{countTot() !==0 && `${countTot()}`} </span>
                     </Link>
                 </Navbar.Collapse>
             </div>

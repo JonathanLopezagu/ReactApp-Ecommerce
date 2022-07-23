@@ -4,13 +4,56 @@
 
 .productosCarrito{
     width: auto;
-    height: 5vh;   
-    background-color: black;
-    color: white;
-    text-align: left;
+    height: auto;
+    text-align: center;  
+    
 }
 
 .imagenCart{
     width: 20px;
     height: 20px;
+}
+
+.imgCarrito{
+    width: 10vw;
+    height: 20vh;
+}
+
+.btnSeguircomprando{
+    
+    padding: 10px;
+    border-radius: 5%;
+    background-color: black;
+    color: white;
+}
+
+.Nohay{
+    margin-top: 25vh;
+}
+
+.btnEliminar{
+    padding: 3px;
+    border-radius: 5%;
+    background-color: black;
+    color: white;
+}
+
+.ContendorComprar{
+    width: max-content;
+    background-color: black;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btnVaciar{ 
+    padding: 5px;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+}
+
+.precioTotal{
+    font-size: larger;
+    color: whitesmoke;
 }
