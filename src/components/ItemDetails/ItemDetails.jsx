@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './itemDetails.css'
-import { useContext } from 'react'
-import { CartContext } from '../../Context/CarritoContext'
+//import { useContext } from 'react'
+import { useCartContext } from '../../Context/CarritoContext'
 import BotonesCondicionales from './BotonesCondicionales'
 
 
 const ItemDetails = ({ item }) => {
 
-  const [cart, addCarrito] = useContext(CartContext);
+  const {cart, addCarrito} = useCartContext();
   const [cantidad, setCantidad] = useState();
   
   //console.log(cart);

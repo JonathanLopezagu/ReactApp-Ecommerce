@@ -4,13 +4,12 @@ import Logo from '../img/LogoJMSISTEMS.png'
 import './NavBar.css'
 import { Navbar, Nav } from "react-bootstrap"
 import { Link, NavLink } from 'react-router-dom';
-//import { CartContext } from '../../Context/CarritoContext'
+import { useCartContext } from '../../Context/CarritoContext'
 
 
 const NavBar = () => {
 
-    //const {cantidadTotal} = useContext(CartContext);
-    
+    const {countTot} = useCartContext();
     return (
 
         <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,7 +36,7 @@ const NavBar = () => {
 
                     <Link to='/cart'>
                         <CardWidget />
-                        {/*cantidadTotal()*/}
+                        {countTot()}
                     </Link>
                 </Navbar.Collapse>
             </div>

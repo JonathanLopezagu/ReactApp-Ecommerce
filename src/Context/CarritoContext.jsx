@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext, createContext } from 'react'
 import { useState } from 'react';
-import { context } from 'react'
-import Cart from '../components/Containers/cart/Cart';
+//import { context } from 'react'
+//import Cart from '../components/Containers/cart/Cart';
 
-export const CartContext = React.createContext();
+export const CartContext = createContext();
 
-export const CarritoContext = ({ children }) => {
+export const useCartContext = () => useContext(CartContext);
+
+export const CarritoContextProvider = ({ children }) => {
 
     let [cart, setCart] = useState([]);
 
@@ -30,12 +32,12 @@ export const CarritoContext = ({ children }) => {
         return cart.reduce((acumulado, prodObjeto) => acumulado = acumulado + (prodObjeto.costo * prodObjeto.quantity), 0)
     }
 
-    const cantidadTotal = () => {
+    const countTot = () => {
         return cart.reduce((cantidad, prodObjeto) => cantidad += prodObjeto.quantity, 0)
     }
 
     const eliminarProducto = (id) => {
-        setCart(cart.filter(carrito => carrito.id !== id))
+        setCart(cart.filter(cart => cart.id !== id))
     }
 
     const vaciarCarrito = () => {
@@ -48,15 +50,17 @@ export const CarritoContext = ({ children }) => {
     return (
 
         <CartContext.Provider value={
-            [cart,
+            {
+                cart,
                 addCarrito,
                 eliminarProducto,
                 vaciarCarrito,
                 precioTotal,
-                cantidadTotal]}>
+                countTot
+            }}>
             {children}
         </CartContext.Provider>
     )
 }
 
-export default CarritoContext
+export default CarritoContextProvider
