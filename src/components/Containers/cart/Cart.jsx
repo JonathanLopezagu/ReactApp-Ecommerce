@@ -26,18 +26,17 @@ const Cart = () => {
       <p> Lo que hay en su carrito</p>
       {cart.map((producto) => (
         //mostrar detalle del carrito
-        <div className='productosCarrito'>
+        <div className='productosCarrito' key={producto.id}>
         <span> Cantidad: {producto.quantity} </span>
         <span> Producto: {producto.name}</span>
         <span> Costo: ${producto.costo}.00 mxn c/u </span>
-        <span> Precio total $ {producto.costo * producto.quantity}</span>
-        <button onClick={()=> eliminarProducto()}> Eliminar Producto</button>
+        <button onClick={()=> eliminarProducto(producto.id)}> Eliminar Producto</button>
         </div>
         
       ))}
       
       {/*mostrar total precio carrito y eliminar carrito listo*/}
-      <p> {precioTotal()} </p>
+      <p> Precio total del carrito:  ${precioTotal()}. MXN </p>
       <button onClick={()=> vaciarCarrito()}> Vaciar Carrito</button>
     </div>
 

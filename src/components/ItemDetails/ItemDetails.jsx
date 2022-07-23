@@ -8,19 +8,19 @@ import BotonesCondicionales from './BotonesCondicionales'
 
 const ItemDetails = ({ item }) => {
 
-  const [cart, agregarCarrito] = useContext(CartContext);
+  const [cart, addCarrito] = useContext(CartContext);
   const [cantidad, setCantidad] = useState();
   
-  console.log(cart);
+  //console.log(cart);
   
   
-  const funcionContador = (cantidad) => {
+  const onAdd = (cantidad) => {
     
     console.log("el valor del contador", cantidad)
     setCantidad(cantidad)
     const producto = { item: item, quantity: cantidad, costo: item.precio, id: item.id , imga: item.imga, name: item.name};
-    agregarCarrito(producto);
-
+    addCarrito({cantidad: cantidad,...producto});
+    
   }
 
   return (
@@ -40,7 +40,7 @@ const ItemDetails = ({ item }) => {
         <p>
           precio :  $ {item.precio}.00 mxn 
         </p>
-        {cantidad ? <BotonesCondicionales/>  : <ItemCount stock={item.cantidad} inicial={0} onAdd={funcionContador}></ItemCount>}
+        {cantidad ? <BotonesCondicionales/>  : <ItemCount stock={item.cantidad} inicial={0} onAdd={onAdd}></ItemCount>}
       </div>
     </div>
   )
