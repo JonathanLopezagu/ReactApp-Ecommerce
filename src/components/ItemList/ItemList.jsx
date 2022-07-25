@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-//import {useEffect,useState} from 'react';
 import Items from '../item/Items';
 
 function ItemList({producto}) {

@@ -1,4 +1,4 @@
-//import React, { useContext } from 'react'
+import React from 'react'
 import CardWidget from '../CardWidget/CardWidget'
 import Logo from '../img/LogoJMSISTEMS.png'
 import './NavBar.css'

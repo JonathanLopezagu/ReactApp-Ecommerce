@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetails from '../../ItemDetails/ItemDetails'
-//import { gFetch } from '../../../baseInfo/baseInfo'
 import Loading from '../../Loader/Loading';
 import { doc, getDoc,  getFirestore} from 'firebase/firestore'
 
 
 const ItemDetailsContainer = () => {
-  //const [productos, setProductos] = useState([]);
   const [producto, setProducto] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
-  //detalle
+  //detalle de un solo producto, filtrado por ID
 
   useEffect(() => {
     setTimeout(() => {

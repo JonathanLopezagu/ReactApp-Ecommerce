@@ -1,12 +1,11 @@
 import React from 'react'
-//import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../../Context/CarritoContext'
 import './Cart.css'
 
 const Cart = () => {
 
-  const { cart, eliminarProducto, agregarCarrito, vaciarCarrito, precioTotal } = useCartContext();
+  const { cart, eliminarProducto, vaciarCarrito, precioTotal } = useCartContext();
   console.log(cart)
 
   if (!cart.length) {
@@ -39,8 +38,6 @@ const Cart = () => {
           </div>
 
         ))}
-
-        {/*mostrar total precio carrito y eliminar carrito listo*/}
         <div className='ContendorComprar'>
           <p className='precioTotal'> Precio total del carrito:  ${precioTotal()}. MXN </p>
           <button className='btnVaciar' onClick={() => vaciarCarrito()}> Vaciar Carrito</button>

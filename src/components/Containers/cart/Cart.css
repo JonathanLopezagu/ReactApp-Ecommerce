@@ -57,3 +57,10 @@
     font-size: larger;
     color: whitesmoke;
 }
+
+.Comprar{ 
+    padding: 5px;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+}

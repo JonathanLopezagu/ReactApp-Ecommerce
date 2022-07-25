@@ -1,7 +1,6 @@
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/Containers/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-//import ItemDetails from './components/ItemDetails/ItemDetails';
 import Cart from './components/Containers/cart/Cart';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +10,7 @@ import CarritoContext from './Context/CarritoContext';
 
 function App() {
   return (
-    <CarritoContext>
+    <CarritoContext> 
     <BrowserRouter>
     <div className="App">
       <NavBar />
