@@ -1,66 +1,77 @@
-.DivCarrito{ 
-    margin-top: 5vh;
+.DivCarrito {
+    margin-top: 10vh;
 }
 
-.productosCarrito{
+.productosCarrito {
     width: auto;
     height: auto;
-    text-align: center;  
-    
+    text-align: left;
+    margin-left: 100px;
+    margin-top: 0px;
 }
 
-.imagenCart{
+.imagenCart {
     width: 20px;
     height: 20px;
 }
 
-.imgCarrito{
+.imgCarrito {
     width: 10vw;
     height: 20vh;
 }
 
-.btnSeguircomprando{
-    
+.btnSeguircomprando {
     padding: 10px;
     border-radius: 5%;
     background-color: black;
     color: white;
 }
 
-.Nohay{
+.Nohay {
     margin-top: 25vh;
 }
 
-.btnEliminar{
+.btnEliminar {
     padding: 3px;
     border-radius: 5%;
     background-color: black;
     color: white;
 }
 
-.ContendorComprar{
+.ContendorComprar {
+    position: absolute;
+    top: 30vh;
+    right: 100px;
+    text-align: center;
     width: max-content;
     background-color: black;
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
 }
 
-.btnVaciar{ 
-    padding: 5px;
-    border-radius: 25px;
+.btnVaciar {
+    padding: 5px 10px;
+    border-radius: 15px;
     background-color: white;
     color: black;
+    margin: 20px;
 }
 
-.precioTotal{
+.LinkComprar {
+    text-decoration: none;
+}
+
+.btnComprar {
+    padding: 5px;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    margin: 20px;
+
+}
+
+.precioTotal {
     font-size: larger;
     color: whitesmoke;
-}
-
-.Comprar{ 
-    padding: 5px;
-    border-radius: 25px;
-    background-color: white;
-    color: black;
 }

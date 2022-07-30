@@ -6,14 +6,13 @@ import './Cart.css'
 const Cart = () => {
 
   const { cart, eliminarProducto, vaciarCarrito, precioTotal } = useCartContext();
-  console.log(cart)
 
   if (!cart.length) {
     return (
       <>
         <br />
         <h3 className="Nohay">No hay productos en el carrito</h3>
-        <Link to='/'><button className='btnSeguircomprando'> Seguir comprando </button></Link>
+        <Link to='/' ><button  className='btnSeguircomprando'> Seguir comprando </button></Link>
 
       </>
     );
@@ -24,7 +23,7 @@ const Cart = () => {
     return (
 
       <div className='DivCarrito'>
-        <p> Lo que hay en su carrito</p>
+        
         {cart.map((products) => (
           //mostrar detalle del carrito
           <div className='productosCarrito' key={products.id}>
@@ -40,6 +39,7 @@ const Cart = () => {
         ))}
         <div className='ContendorComprar'>
           <p className='precioTotal'> Precio total del carrito:  ${precioTotal()}. MXN </p>
+          <Link to='/FinalizarCompra' className='LinkComprar' ><button className='btnComprar'> Confirmar compra </button> </Link>
           <button className='btnVaciar' onClick={() => vaciarCarrito()}> Vaciar Carrito</button>
         </div>
 

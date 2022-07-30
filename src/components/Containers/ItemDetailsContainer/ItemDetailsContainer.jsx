@@ -11,7 +11,6 @@ const ItemDetailsContainer = () => {
   const { id } = useParams();
 
   //detalle de un solo producto, filtrado por ID
-
   useEffect(() => {
     setTimeout(() => {
       const db = getFirestore();

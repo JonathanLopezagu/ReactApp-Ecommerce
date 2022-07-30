@@ -1,6 +1,5 @@
 import React, { useContext, createContext } from 'react'
 import { useState } from 'react';
-
 export const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 export const CarritoContextProvider = ({ children }) => {
@@ -19,8 +18,8 @@ export const CarritoContextProvider = ({ children }) => {
             ])
         } //En caso de que no exista agrega uno mas del mismo producto
         else {
-            const cantidadExistente = cart[indexProducto].quantity
-            cart[indexProducto].quantity = cantidadExistente + item.quantity
+            const inCart = cart[indexProducto].quantity
+            cart[indexProducto].quantity = inCart + item.quantity
             setCart([...cart])
         }
     }

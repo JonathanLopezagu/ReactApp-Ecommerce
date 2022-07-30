@@ -1,0 +1,45 @@
+.formContainer{
+    margin-top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: whitesmoke;
+    color: black;
+    width: 50vw;
+    text-align: left;
+    border-radius: 10px;
+    
+}
+
+.label{
+    width: 20vw;
+    margin-bottom: 10px;
+}
+
+.inForm{
+    width: 28vw;
+}
+
+.pFormPrice{ 
+    text-align: center;
+    font-size: large;
+}
+
+.inpGenerate{
+    margin: 0 40%;
+    padding: 5px;
+    color:white ;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.pCondition{
+    text-align: right;
+    margin-right: 5vw;
+    color: red;
+}
+.pConditionEmail{
+    text-align: right;
+    margin-right: 10vw;
+    color: red;
+}
