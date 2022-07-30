@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailsContainer from './components/Containers/ItemDetailsContainer/ItemDetailsContainer';
-import Formulario from './components/FormBuy/Formulario';
+import FormBuy from './components/FormBuy/FormBuy';
 import Cart from './components/Containers/cart/Cart';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/Containers/ItemListContainer/ItemListContainer';
@@ -20,7 +20,7 @@ function App() {
         <Route path='/:categoria' element={<ItemListContainer /> }/> 
         <Route path='/details/:id' element={<ItemDetailsContainer/> }/>
         <Route path='/cart' element={<Cart/> }/>
-        <Route path='/finalizarCompra' element={<Formulario/>}/>
+        <Route path='/finalizarCompra' element={<FormBuy/>}/>
         <Route path='*' element={<Navigate to='/'/>}/>
       </Routes>
     </div>

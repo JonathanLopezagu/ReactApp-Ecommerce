@@ -2,7 +2,7 @@ import React from 'react'
 import { useCartContext } from '../../Context/CarritoContext'
 import { useForm } from 'react-hook-form'
 import './formulario.css'
-const Formulario = () => {
+const Form = () => {
 
   const { cart, precioTotal } = useCartContext();
   const { register,handleSubmit,watch, formState:{errors} } = useForm({ 
@@ -27,7 +27,7 @@ const Formulario = () => {
   const data= (datos)=>{ 
     console.log(datos)
   }
-
+  
   return (
     <div className='formContainer'>
       <form onSubmit={handleSubmit(data)}>
@@ -68,7 +68,7 @@ const Formulario = () => {
           {errors.location?.type === 'minLength' && <p className='pCondition'> Direccion incorrecta</p>}
         </div>
         <div>
-          <p className='pFormPrice'> {watch('name')} El costo de tu compra es $ {precioTotal()}.00 MXN</p>
+          <p className='pFormPrice'> <strong> {watch('name')}  </strong> el costo de tu compra es $ {precioTotal()}.00 MXN</p>
           <input className='inpGenerate' type="submit" value="Generar orden" />
         </div>
 
@@ -78,4 +78,4 @@ const Formulario = () => {
   )
 }
 
-export default Formulario
+export default Form
