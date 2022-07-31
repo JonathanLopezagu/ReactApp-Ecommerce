@@ -5,9 +5,9 @@
     flex-direction: row;
     background-color: whitesmoke;
     border-radius: 10px;
-    border: 1px solid black;
     width: 80vw;
     height: auto;
+    padding-bottom: 5vh;
     margin-bottom: 10vh;
 }
 
@@ -18,7 +18,7 @@
     margin: 0 auto;
 }
 
-.img-detalles{
+.img-details{
     margin: auto;
     width: 90%;
     height: 90%;
@@ -37,23 +37,3 @@
     border-radius: 10px;
 }
 
-.botones{
-    margin-bottom: 2vh;
- }
-
- .btnComprar{
-
-    padding: 5px;
-    color:white ;
-    background-color: black;
-    border-radius: 10px;
-
- }
-
- .btnVolverComprar{ 
-    padding: 5px;
-    color:white ;
-    background-color: black;
-    border-radius: 10px;
-    
- }

@@ -22,5 +22,10 @@
 }
 
 .SpanContador {  
-    color: red;
+    color: black;
+    text-decoration: none;
+}
+
+.contain{
+    text-decoration: none;
 }

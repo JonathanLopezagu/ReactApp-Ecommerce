@@ -1,0 +1,28 @@
+.botones{
+    margin-top: 2vh;
+ }
+
+ .btnVolverComprar { 
+    padding: 10px;
+    color:white ;
+    background-color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+ }
+
+ .btnBuy{
+    padding: 10px;
+    color:white ;
+    background-color: black;
+    border-radius: 10px;
+    text-decoration: none;
+ }
+
+ .btnBuy:hover{
+    color: white;
+ }
+
+ .btnVolverComprar:hover{
+    color: white;
+ }

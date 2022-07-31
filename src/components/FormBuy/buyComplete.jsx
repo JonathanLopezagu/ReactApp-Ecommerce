@@ -1,11 +1,11 @@
 import React from 'react'
 
-const buyComplete = () => {
+const BuyComplete = ({orderId}) => {
   return (
     <div>
-        Compra completa
+        Compra completa el codigo de comprar es : {orderId}
     </div>
   )
 }
 
-export default buyComplete
+export default BuyComplete
