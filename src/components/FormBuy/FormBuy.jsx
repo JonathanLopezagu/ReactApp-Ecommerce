@@ -34,7 +34,7 @@ const Form = () => {
   }
 
   if (orderId) {
-    return <BuyComplete orderId={orderId} />
+    return <BuyComplete orderId={orderId}/>
   }
 
   return (

@@ -6,7 +6,6 @@ export const generateOrder = (order, setOrderId, vaciarCarrito) => {
     addDoc(refOrder, order)
         .then((doc) => {
             setOrderId(doc.id)
-            console.log(doc.id)
         })
     vaciarCarrito()
 }
