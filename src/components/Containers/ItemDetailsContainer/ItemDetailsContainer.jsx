@@ -6,7 +6,7 @@ import { doc, getDoc,  getFirestore} from 'firebase/firestore'
 
 
 const ItemDetailsContainer = () => {
-  const [producto, setProducto] = useState({});
+  const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
@@ -16,7 +16,7 @@ const ItemDetailsContainer = () => {
       const db = getFirestore();
       const queryProduct = doc(db, 'productos',id);
       getDoc(queryProduct)
-        .then(resp => setProducto({ id: resp.id, ...resp.data() }))
+        .then(resp => setProduct({ id: resp.id, ...resp.data() }))
         .catch( err=> console.log(err))
         .finally(()=> setLoading(false))
     }, 2000)
@@ -27,7 +27,7 @@ const ItemDetailsContainer = () => {
 
     <Loading />
   ) : (
-    <ItemDetails item={producto} />
+    <ItemDetails item={product} />
   );
 };
 

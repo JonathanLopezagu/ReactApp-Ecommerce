@@ -8,12 +8,12 @@ import BotonesCondicionales from './BotonesCondicionales'
 const ItemDetails = ({ item }) => {
 
   const { addCarrito } = useCartContext();
-  const [cantidad, setCantidad] = useState();
+  const [quantity, setCQuantity] = useState();
 
-  const onAdd = (cantidad) => {
-    setCantidad(cantidad)
-    const producto = { item: item, quantity: cantidad, costo: item.precio, id: item.id, imga: item.imga, name: item.name };
-    addCarrito({ cantidad: cantidad, ...producto });
+  const onAdd = (count) => {
+    setCQuantity(count)
+    const product = { item: item, quantity: count, costo: item.precio, id: item.id, imga: item.imga, name: item.name };
+    addCarrito({ quantity: count, ...product });
 
   }
 
@@ -34,7 +34,7 @@ const ItemDetails = ({ item }) => {
         <p>
           precio :  $ {item.precio}.00 mxn
         </p>
-        {cantidad ? <BotonesCondicionales /> : <ItemCount stock={item.cantidad} inicial={0} onAdd={onAdd}></ItemCount>}
+        {quantity ? <BotonesCondicionales /> : <ItemCount stock={item.cantidad} inicial={0} onAdd={onAdd}></ItemCount>}
       </div>
     </div>
   )

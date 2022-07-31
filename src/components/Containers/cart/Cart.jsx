@@ -5,8 +5,8 @@ import './Cart.css'
 
 const Cart = () => {
 
-  const { cart, eliminarProducto, vaciarCarrito, precioTotal } = useCartContext();
-
+  const { cart, removeProduct, deleteCart, totalPrice } = useCartContext();
+  // Consulta si hay algo en el carrito si no hay regresa a inicio
   if (!cart.length) {
     return (
       <>
@@ -20,6 +20,7 @@ const Cart = () => {
 
   }
   else {
+    // Si hay algun producto en carrito lo muestra en la pantalla
     return (
 
       <div className='DivCarrito'>
@@ -32,15 +33,15 @@ const Cart = () => {
             <span> Producto: {products.name}</span>
             <p>
               <span> Costo: ${products.costo}.00 mxn c/u </span>
-              <button className='btnEliminar' onClick={() => eliminarProducto(products.id)}> Eliminar Producto</button>
+              <button className='btnEliminar' onClick={() => removeProduct(products.id)}> Eliminar Producto</button>
             </p>
           </div>
 
         ))}
         <div className='ContendorComprar'>
-          <p className='precioTotal'> Precio total del carrito:  ${precioTotal()}. MXN </p>
+          <p className='precioTotal'> Precio total del carrito:  ${totalPrice()}. MXN </p>
           <Link to='/FinalizarCompra' className='LinkComprar' ><button className='btnComprar'> Confirmar compra </button> </Link>
-          <button className='btnVaciar' onClick={() => vaciarCarrito()}> Vaciar Carrito</button>
+          <button className='btnVaciar' onClick={() => deleteCart()}> Vaciar Carrito</button>
         </div>
 
       </div>

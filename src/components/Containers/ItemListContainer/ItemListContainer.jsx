@@ -6,7 +6,7 @@ import ItemList from '../../ItemList/ItemList';
 import Loading from '../../Loader/Loading';
 
 function ItemListContainer() {
-  const [productos, setProductos] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { categoria } = useParams();
 
@@ -19,14 +19,14 @@ function ItemListContainer() {
     if(categoria){ 
       const queryCollectionFiltrado =query(queryCollection,where('categoria','==',categoria))
       getDocs(queryCollectionFiltrado)
-        .then(resp=> setProductos(resp.docs.map(element=> ({ id : element.id, ...element.data()}) )))
+        .then(resp=> setProducts(resp.docs.map(element=> ({ id : element.id, ...element.data()}) )))
         .catch( err=> console.log(err))
         .finally(()=> setLoading(false))
     }
     else { 
       //Si no hay categoria trae todos los docs.
     getDocs(queryCollection)
-      .then(resp=> setProductos(resp.docs.map(element=> ({ id : element.id, ...element.data()}) )))
+      .then(resp=> setProducts(resp.docs.map(element=> ({ id : element.id, ...element.data()}) )))
       .catch( err=> console.log(err))
       .finally(()=> setLoading(false))
     }
@@ -36,7 +36,7 @@ function ItemListContainer() {
 
     <Loading />
   ) : (
-    <ItemList producto={productos} />
+    <ItemList product={products} />
   );
 
 }

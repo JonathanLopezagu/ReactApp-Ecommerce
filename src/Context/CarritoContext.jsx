@@ -9,36 +9,36 @@ export const CarritoContextProvider = ({ children }) => {
     //Funcion para agregar al carrito
     const addCarrito = (item) => {
 
-        const indexProducto = cart.findIndex(prod => prod.id === item.id)
+        const indexProduct = cart.findIndex(prod => prod.id === item.id)
         //Condicion para validar si existe en el carrito
-        if (indexProducto === -1) {
+        if (indexProduct === -1) {
             setCart([
                 ...cart,
                 item
             ])
         } //En caso de que no exista agrega uno mas del mismo producto
         else {
-            const inCart = cart[indexProducto].quantity
-            cart[indexProducto].quantity = inCart + item.quantity
+            const inCart = cart[indexProduct].quantity
+            cart[indexProduct].quantity = inCart + item.quantity
             setCart([...cart])
         }
     }
 
     //Funcion para obtener el saldo total a pagar
-    const precioTotal = () => {
-        return cart.reduce((acumulado, prodObjeto) => acumulado = acumulado + (prodObjeto.costo * prodObjeto.quantity), 0)
+    const totalPrice = () => {
+        return cart.reduce((acum, prodObjeto) => acum = acum + (prodObjeto.costo * prodObjeto.quantity), 0)
     }
 
     //Funcion para obtener contador de productos en el carrito
     const countTot = () => {
-        return cart.reduce((cantidad, prodObjeto) => cantidad += prodObjeto.quantity, 0)
+        return cart.reduce((quantity, prodObjeto) => quantity += prodObjeto.quantity, 0)
     }
     //Funcion para eliminar producto del carrito
-    const eliminarProducto = (id) => {
+    const removeProduct = (id) => {
         setCart(cart.filter(cart => cart.id !== id))
     }
     //Funcion para vaciar carrito de compras
-    const vaciarCarrito = () => {
+    const deleteCart = () => {
         setCart([]);
     }
 
@@ -51,9 +51,9 @@ export const CarritoContextProvider = ({ children }) => {
             {
                 cart,
                 addCarrito,
-                eliminarProducto,
-                vaciarCarrito,
-                precioTotal,
+                removeProduct,
+                deleteCart,
+                totalPrice,
                 countTot
             }}>
             {children}

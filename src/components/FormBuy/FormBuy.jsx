@@ -7,7 +7,7 @@ import { generateOrder } from '../../firebase/getFirestore'
 import BuyComplete from './BuyComplete'
 const Form = () => {
 
-  const { cart, precioTotal, vaciarCarrito } = useCartContext();
+  const { cart, totalPrice, deleteCart } = useCartContext();
   const [orderId, setOrderId] = useState()
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
     defaultValues: {
@@ -23,14 +23,14 @@ const Form = () => {
         return { id, price, productName, quantity }
 
       }),
-      tot: precioTotal(),
+      tot: totalPrice(),
       date: Timestamp.fromDate(new Date),
     }
   });
 
 
   const generateData = (datos) => {
-    generateOrder(datos, setOrderId, vaciarCarrito)
+    generateOrder(datos, setOrderId, deleteCart)
   }
 
   if (orderId) {
@@ -77,7 +77,7 @@ const Form = () => {
           {errors.location?.type === 'minLength' && <p className='pCondition'> Direccion incorrecta</p>}
         </div>
         <div>
-          <p className='pFormPrice'> <strong> {watch('name')}  </strong> el costo de tu compra es $ {precioTotal()}.00 MXN</p>
+          <p className='pFormPrice'> <strong> {watch('name')}  </strong> el costo de tu compra es $ {totalPrice()}.00 MXN</p>
           <input className='inpGenerate' type="submit" value="Generar orden" />
         </div>
 
